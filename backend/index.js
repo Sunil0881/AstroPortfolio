@@ -8,8 +8,17 @@ require('dotenv').config();
 const port = 5000;
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
 
+const corsOptions = {
+  origin: ['https://astro-portfolio-beta-ten.vercel.app'],
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+
+
+// Allow requests from the specified frontend origin
+app.use(cors(corsOptions));
 mongoose
   .connect(process.env.MONGODB)
   .then(() => {
