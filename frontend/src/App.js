@@ -10,9 +10,9 @@ import Thankyou from './pages/Thankyou';
 
 
 function App() {
+  const isLoggedIn = localStorage.getItem('authenticated');
   return (
     <div>
-    
          <Router>
             <Routes>
               <Route path="/" element={<Home />} />
