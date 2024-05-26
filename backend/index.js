@@ -9,16 +9,18 @@ const port = 5000;
 const app = express();
 app.use(bodyParser.json());
 
-const corsOptions = {
-  origin: ['https://astro-portfolio-beta-ten.vercel.app'],
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-  optionsSuccessStatus: 204,
-};
+// const corsOptions = {
+//   // origin: ['https://astro-portfolio-beta-ten.vercel.app'],
+//   origin: ['http://localhost:3000'],
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   credentials: true,
+//   optionsSuccessStatus: 204,
+// };
 
 
 // Allow requests from the specified frontend origin
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 mongoose
   .connect(process.env.MONGODB)
   .then(() => {

@@ -6,12 +6,13 @@ const Admin = () => {
   const [starttime, setStartTime] = useState(''); // Update variable names to match backend schema
   const [endtime, setEndTime] = useState(''); // Update variable names to match backend schema
   const [mode, setMode] = useState('');
+  const urlvar = 'http://localhost:5000';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('https://astro-portfolio-backend.vercel.app/api/slots', 
+      const response = await axios.post(`${urlvar}/api/slots`, 
         { date, starttime, endtime, mode },
         { headers: { Authorization: `Bearer ${token}` } }
       );

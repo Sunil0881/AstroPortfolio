@@ -3,12 +3,14 @@ import React, { useState } from 'react'
 const Login = () => {
     const [admin, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const urlvar = 'http://localhost:5000';
+    // https:astro-portfolio-backend.vercel.app
 
     const handleSubmit = async (e) => {
         e.preventDefault();
     
         try {
-          const response = await fetch("https://astro-portfolio-backend.vercel.app/api/login", {
+          const response = await fetch(`${urlvar}/api/login`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -16,7 +18,7 @@ const Login = () => {
             body: JSON.stringify({ admin, password }),
           });
           const data = await response.json();
-    
+          console.log(data);
           if (response.ok) {
             console.log(data.message);
             window.localStorage.setItem("authenticated", true);

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 const Thankyou = () => {
   const [slotId, setSlotId] = useState();
-  const urlvar = 'https://astro-portfolio-backend.vercel.app';
+  const urlvar = 'http://localhost:5000';
 
   useEffect(() => {
     const storedSlotId = localStorage.getItem('slotId');
