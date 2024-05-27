@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 
 const Contact = () => {
   return (
-    <div className='overflow-x-hidden reddit-sans'>
+    <div className='overflow-x-hidden quicksand-font'>
       <Navbar />
       <div className='md:flex justify-between md:mx-40 mx-10'>
       <Calendar />

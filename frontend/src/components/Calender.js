@@ -7,7 +7,7 @@ import axios from 'axios';
 const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [slots, setSlots] = useState([]);
-  const urlvar = 'https://astro-portfolio-beta-ten.vercel.app';
+  const urlvar = 'https://astro-portfolio-beta-ten.vercel.app/';
 
   useEffect(() => {
     if (selectedDate) {
@@ -66,9 +66,9 @@ const Calendar = () => {
       </div>
       <div className=" p-6 bg-gray-100 flex flex-col border-2 rounded shadow-lg  items-center my-10 w-2/3">
         <div className=" w-full max-w-4xl">
-          <h3 className="text-3xl font-bold mb-6 text-orange-500">Available Slots</h3>
+          <h3 className="text-3xl flex justify-center font-bold mb-6 text-orange-500">Available Slots</h3>
           {slots.length === 0 ? (
-            <div className="text-gray-600 text-lg">No appointments available</div>
+            <div className="text-gray-600 text-lg">No slots available</div>
           ) : (
             <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {slots.map((slot, index) => (
