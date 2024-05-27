@@ -10,28 +10,24 @@ const ContactForm = () => {
   const slotId = queryParams.get('slotId');
 
   useEffect(() => {
-    localStorage.setItem('slotId', slotId);
-  }, []);
+    if (slotId) {
+      localStorage.setItem('slotId', slotId);
+    }
 
-  // Ensure mode is URL encoded
-  const encodedMode = encodeURIComponent(mode);
+    // Ensure all parameters are URL encoded
+    const encodedDate = encodeURIComponent(date);
+    const encodedTime = encodeURIComponent(time);
+    const encodedMode = encodeURIComponent(mode);
 
-  const googleFormUrl = `https://docs.google.com/forms/d/e/1FAIpQLSfJIfZkcaFmsV4PXoAnDvLE6v1oWdr2QJJldAeTnUAZKXcwAQ/viewform?usp=sf_link&entry.117367192=${date}&entry.377680888=${time}&entry.1251509875=${encodedMode}`;
-  
+    const googleFormUrl = `https://docs.google.com/forms/d/e/1FAIpQLSfJIfZkcaFmsV4PXoAnDvLE6v1oWdr2QJJldAeTnUAZKXcwAQ/viewform?usp=sf_link&entry.117367192=${encodedDate}&entry.377680888=${encodedTime}&entry.1251509875=${encodedMode}`;
+    
+    // Redirect to the Google Form
+    window.location.href = googleFormUrl;
+  }, [date, time, mode, slotId]);
+
   return (
     <div className='flex flex-col items-center justify-center'>
-      <h2 className=' text-center my-10 font-semibold text-3xl'>Contact Us</h2>
-      <iframe
-        src={googleFormUrl}
-        width="1000"
-        height="500"
-        frameBorder="0"
-        marginHeight="0"
-        title='form'
-        marginWidth="0"
-      >
-        Loading…
-      </iframe>
+      <h2 className='text-center my-10 font-semibold text-3xl'>Redirecting to Contact Form...</h2>
     </div>
   );
 };
