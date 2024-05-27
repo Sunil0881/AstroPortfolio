@@ -7,7 +7,7 @@ import axios from 'axios';
 const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [slots, setSlots] = useState([]);
-  const urlvar = 'https://astro-portfolio-beta-ten.vercel.app';
+  const urlvar = 'https://astro-portfolio-beta-ten.vercel.app/';
 
   useEffect(() => {
     if (selectedDate) {
@@ -64,32 +64,36 @@ const Calendar = () => {
           <div>{selectedDate && format(selectedDate, 'dd-MM-yyyy')}</div>
         </div>
       </div>
-
-
-      <div className="mt-6 w-full max-w-4xl">
-        <h3 className="text-2xl font-semibold mb-4">Available Slots</h3>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {slots.map((slot, index) => (
-            <li key={index} className="bg-white p-4 shadow rounded-lg">
-              <div>Time: {`${slot.starttime} - ${slot.endtime}`}</div>
-              <div>Mode: {slot.mode}</div>
-              <div>
-                {slot.isBooked ? (
-                  <button className="bg-gray-400 text-white py-2 px-4 rounded cursor-not-allowed" disabled>
-                    Booked
-                  </button>
-                ) : (
-                  <button
-                    className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-700"
-                    onClick={() => handleBookSlot(slot)}
-                  >
-                    Book Now
-                  </button>
-                )}
-              </div>
-            </li>
-          ))}
-        </ul>
+      <div className=" p-6 bg-gray-100 flex flex-col border-2 rounded shadow-lg  items-center my-10 w-2/3">
+        <div className=" w-full max-w-4xl">
+          <h3 className="text-3xl flex justify-center font-bold mb-6 text-orange-500">Available Slots</h3>
+          {slots.length === 0 ? (
+            <div className="text-gray-600 text-lg">No slots available</div>
+          ) : (
+            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {slots.map((slot, index) => (
+                <li key={index} className="bg-white p-4 shadow rounded-lg">
+                  <div>Time: {`${slot.starttime} - ${slot.endtime}`}</div>
+                  <div>Mode: {slot.mode}</div>
+                  <div className=' pt-2'>
+                    {slot.isBooked ? (
+                      <button className="bg-gray-400 text-white py-2 px-4 rounded cursor-not-allowed" disabled>
+                        Booked
+                      </button>
+                    ) : (
+                      <button
+                        className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-700"
+                        onClick={() => handleBookSlot(slot)}
+                      >
+                        Book Now
+                      </button>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </div>
   );
