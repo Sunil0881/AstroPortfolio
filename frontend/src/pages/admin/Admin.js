@@ -23,11 +23,13 @@ const Admin = () => {
   };
 
   return (
-    <div>
-        <div>
+    <div >
+      <div className='flex justify-center text-3xl'>
+        <div className=''>
             Admin
         </div>
-        <form onSubmit={handleSubmit}>
+        </div>
+        <form onSubmit={handleSubmit } className='px-20'>
           <h2 className="text-xl font-semibold text-gray-600 mb-4">Add Slot</h2>
           <div className="mb-4">
             <label className="block text-gray-600 mb-1">Date:</label>
