@@ -7,7 +7,7 @@ import axios from 'axios';
 const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [slots, setSlots] = useState([]);
-  const urlvar = 'https://backend-astro.vercel.app';
+  const urlvar = 'https://astro-portfolio-beta-ten.vercel.app';
 
   useEffect(() => {
     if (selectedDate) {
@@ -52,20 +52,21 @@ const Calendar = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 flex flex-col items-center my-10">
-      <h2 className="text-3xl font-bold mb-6 text-orange-500">Select a Date</h2>
-      <div className="bg-white p-4 shadow-lg rounded-lg">
-        <DatePicker
-          selected={selectedDate}
-          onChange={handleDateChange}
-          dateFormat="yyyy-MM-dd"
-          inline
-          className="border-2 border-orange-500 rounded-lg"
-        />
-        <div>
-          {selectedDate && format(selectedDate, 'dd-MM-yyyy')}
+    <div className=" mt-6 flex justify-between space-x-32 w-full">
+      <div className="p-6 bg-gray-100 border-2 rounded flex flex-col items-center shadow-lg  my-10 w-1/3">
+        <h2 className="text-3xl font-bold mb-6 text-orange-500">Select a Date</h2>
+        <div className="bg-white p-4 shadow-lg rounded-lg">
+          <DatePicker
+            selected={selectedDate}
+            onChange={handleDateChange}
+            dateFormat="yyyy-MM-dd"
+            inline
+            className="border-2 border-orange-500 rounded-lg"
+          />
+          <div>{selectedDate && format(selectedDate, 'dd-MM-yyyy')}</div>
         </div>
       </div>
+
 
       <div className="mt-6 w-full max-w-4xl">
         <h3 className="text-2xl font-semibold mb-4">Available Slots</h3>
