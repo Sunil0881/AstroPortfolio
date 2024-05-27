@@ -24,7 +24,7 @@ function App() {
               <Route path="/thankyou" element={<Thankyou />} />
             </Routes>
           </Router>
-     
+    
     </div>
   );
 }
