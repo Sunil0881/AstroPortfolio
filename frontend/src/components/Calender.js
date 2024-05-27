@@ -55,7 +55,7 @@ const Calendar = () => {
 
   return (
     
-    <div className="p-6  lg:py-16 bg-gray-100 w-full lg:grid lg:grid-cols-2 lg:gap-20  my-10   text-center">
+    <div className="p-1 md:p-6  lg:py-16 bg-gray-100 w-full lg:grid lg:grid-cols-2 lg:gap-20  my-10   text-center">
       <div>
       <h2 className="text-3xl font-bold mb-6 text-orange-500">Select a Date</h2>
       <div className="bg-white p-4 md:mx-24  lg:mx-10 xl:mx-32 shadow-lg rounded-lg">

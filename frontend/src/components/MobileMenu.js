@@ -1,12 +1,21 @@
 // src/MobileMenu.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const MobileMenu = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
+
+  const handleServiceClick = () => {
+    onClose(); // Close the mobile menu
+    navigate('/', { state: { scrollToService: true } });
+  };
+
   return (
     <div
       className={`fixed top-0 left-0 w-full h-full bg-white transition-transform transform ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
+      style={{ zIndex: 1000 }}
     >
       <div className="flex justify-end  p-4">
         <button onClick={onClose} className="text-black text-2xl">
@@ -20,9 +29,9 @@ const MobileMenu = ({ isOpen, onClose }) => {
         <a href="/about" className="text-black text-xl" onClick={onClose}>
           About
         </a>
-        <a href="#service" className="text-black text-xl" onClick={onClose}>
+        <button onClick={handleServiceClick} className="text-black text-xl">
           Service
-        </a>
+        </button>
         <a href="/contact" className="text-black text-xl" onClick={onClose}>
           Contact Us
         </a>
