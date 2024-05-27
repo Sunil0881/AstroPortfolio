@@ -3,14 +3,19 @@ import React from 'react'
 import Moon from '../assets/moon.png'
 import Recline from '../assets/recline.png'
 import MobileMenu from './MobileMenu';
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleServiceClick = () => {
+    navigate('/', { state: { scrollToService: true } });
   };
 
   return (
@@ -38,15 +43,15 @@ const Navbar = () => {
           <Link to="/about" className="text-black hover:scale-95 text-xl">
             About
           </Link>
-          <Link to="#service" className="text-black hover:scale-95 text-xl">
+          <button onClick={handleServiceClick} className="text-black hover:scale-95 text-xl">
             Service
-          </Link>
+          </button>
           <Link to="/contact" className="text-black hover:scale-95 text-xl">
             Contact Us
           </Link>
-          <button className="text-amber-500 p-2 px-4 bg-stone-800 hover:bg-stone-700 hover:scale-95 rounded text-xl">
+          <a href='/contact' ><button className="text-amber-500 p-2 px-4 bg-stone-800 hover:bg-stone-700 hover:scale-95 rounded text-xl">
             Get in touch
-          </button>
+          </button></a>
         </nav>
       </div>
       <MobileMenu isOpen={isMobileMenuOpen} onClose={toggleMobileMenu} />
