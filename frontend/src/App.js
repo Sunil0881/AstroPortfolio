@@ -20,7 +20,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path='/login'  element={<Login />} />
               <Route path='/adminpage' element={isLoggedIn === 'true'? <Admin />:<Login />} />
-              <Route path='/contactform' element={isLoggedIn === 'true'? <ContactForm />:<Login />} />
+              <Route path='/contactform' element={ <ContactForm />} />
               <Route path="/thankyou" element={<Thankyou />} />
             </Routes>
           </Router>
