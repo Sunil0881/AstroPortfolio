@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <div className='overflow-x-hidden quicksand-font'>
       <Navbar />
-      <div className='md:flex justify-between md:mx-40 mx-10'>
+      <div className='md:flex justify-between md:mx-20 mx-10'>
       <Calendar />
       </div>
       <Booking />

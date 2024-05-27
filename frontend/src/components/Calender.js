@@ -54,9 +54,11 @@ const Calendar = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 flex flex-col items-center my-10">
+    
+    <div className="p-6  lg:py-16 bg-gray-100 w-full lg:grid lg:grid-cols-2 lg:gap-20  my-10   text-center">
+      <div>
       <h2 className="text-3xl font-bold mb-6 text-orange-500">Select a Date</h2>
-      <div className="bg-white p-4 shadow-lg rounded-lg">
+      <div className="bg-white p-4 md:mx-24  lg:mx-10 xl:mx-32 shadow-lg rounded-lg">
         <DatePicker
           selected={selectedDate}
           onChange={handleDateChange}
@@ -68,9 +70,12 @@ const Calendar = () => {
           {selectedDate && format(selectedDate, 'dd-MM-yyyy')}
         </div>
       </div>
+      </div>
 
-      <div className="mt-6 w-full max-w-4xl">
-        <h3 className="text-2xl font-semibold mb-4">Available Slots</h3>
+     
+
+      <div className="">
+        <h3 className="text-2xl font-semibold pt-5 mb-4 text-center">Available Slots</h3>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {slots.length > 0 ? (
             slots.map((slot, index) => (
@@ -94,11 +99,15 @@ const Calendar = () => {
               </li>
             ))
           ) : (
-            <div className="text-center text-gray-500">No slots available</div>
+            <div className=''>
+              <div className="text-center text-gray-500 ">No slots available</div>
+            </div>
           )}
         </ul>
       </div>
+
     </div>
+    
   );
 };
 
