@@ -15,6 +15,10 @@ const Calendar = () => {
     }
   }, [selectedDate]);
 
+  useEffect(() => {
+    console.log(slots); // Log slots whenever it changes
+  }, [slots]);
+
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
@@ -27,16 +31,10 @@ const Calendar = () => {
       const formattedDate = `${year}-${month}-${day}`;
       console.log(formattedDate);
       const response = await axios.get(`${urlvar}/api/slots?date=${formattedDate}`);
-      const data = response.data;
-      if (Array.isArray(data)) {
-        setSlots(data);
-      } else {
-        setSlots([]);
-      }
-      console.log(data);
+      setSlots(response.data);
+      console.log(slots);
     } catch (error) {
       console.error('Error fetching slots:', error);
-      setSlots([]);
     }
   };
 
@@ -46,7 +44,7 @@ const Calendar = () => {
       date: format(selectedDate, 'yyyy-MM-dd'),
       time: timeRange,
       mode: slot.mode,
-      slotId: slot._id,
+      slotId: slot._id
     }).toString();
     window.open(`/contactform?${queryParams}`, '_blank');
   };
@@ -70,7 +68,7 @@ const Calendar = () => {
       <div className="mt-6 w-full max-w-4xl">
         <h3 className="text-2xl font-semibold mb-4">Available Slots</h3>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {Array.isArray(slots) && slots.map((slot, index) => (
+          {slots.map((slot, index) => (
             <li key={index} className="bg-white p-4 shadow rounded-lg">
               <div>Time: {`${slot.starttime} - ${slot.endtime}`}</div>
               <div>Mode: {slot.mode}</div>
