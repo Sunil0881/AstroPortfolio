@@ -1,7 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const Thankyou = () => {
+  const navigate = useNavigate();
   const [slotId, setSlotId] = useState();
   const urlvar = 'https://backend-astro.vercel.app';
 
@@ -32,10 +35,34 @@ const Thankyou = () => {
     }
   }, [slotId]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate('/');
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
+
+
   return (
-    <div>
-      Thank you for booking your slot.
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-amber-500 to-amber-500">
+    <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 text-center max-w-lg mx-auto relative">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-800 mb-4">
+        Thank you for booking your slot.
+      </h2>
+      
+      <div className="w-full flex justify-center mt-6">
+        <svg className="animate-bounce w-16 h-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      
+      <p className="mt-4 text-lg text-gray-700">
+        You will be redirected shortly.
+      </p>
     </div>
+  </div>
+  
   );
 
 };
