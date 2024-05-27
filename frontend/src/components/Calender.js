@@ -7,7 +7,7 @@ import axios from 'axios';
 const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [slots, setSlots] = useState([]);
-  const urlvar = 'https://astro-portfolio-beta-ten.vercel.app/';
+  const urlvar = 'https://astro-portfolio-beta-ten.vercel.app';
 
   useEffect(() => {
     if (selectedDate) {
