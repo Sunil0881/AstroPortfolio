@@ -7,7 +7,7 @@ import axios from 'axios';
 const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [slots, setSlots] = useState([]);
-  const urlvar = 'http://localhost:5000';
+  const urlvar = 'https://backend-astro.vercel.app';
 
   useEffect(() => {
     if (selectedDate) {

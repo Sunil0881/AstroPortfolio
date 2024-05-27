@@ -6,7 +6,7 @@ const Admin = () => {
   const [starttime, setStartTime] = useState(''); // Update variable names to match backend schema
   const [endtime, setEndTime] = useState(''); // Update variable names to match backend schema
   const [mode, setMode] = useState('');
-  const urlvar = 'http://localhost:5000';
+  const urlvar = 'https://backend-astro.vercel.app';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
