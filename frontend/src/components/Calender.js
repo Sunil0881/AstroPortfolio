@@ -31,10 +31,14 @@ const Calendar = () => {
       const formattedDate = `${year}-${month}-${day}`;
       console.log(formattedDate);
       const response = await axios.get(`${urlvar}/api/slots?date=${formattedDate}`);
-      setSlots(response.data);
-      console.log(slots);
+      
+      // Ensure the data is an array
+      const fetchedSlots = Array.isArray(response.data) ? response.data : [];
+      setSlots(fetchedSlots);
+      console.log(fetchedSlots); // Log the fetched slots
     } catch (error) {
       console.error('Error fetching slots:', error);
+      setSlots([]); // Set slots to an empty array in case of error
     }
   };
 
@@ -68,26 +72,30 @@ const Calendar = () => {
       <div className="mt-6 w-full max-w-4xl">
         <h3 className="text-2xl font-semibold mb-4">Available Slots</h3>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {slots.map((slot, index) => (
-            <li key={index} className="bg-white p-4 shadow rounded-lg">
-              <div>Time: {`${slot.starttime} - ${slot.endtime}`}</div>
-              <div>Mode: {slot.mode}</div>
-              <div>
-                {slot.isBooked ? (
-                  <button className="bg-gray-400 text-white py-2 px-4 rounded cursor-not-allowed" disabled>
-                    Booked
-                  </button>
-                ) : (
-                  <button
-                    className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-700"
-                    onClick={() => handleBookSlot(slot)}
-                  >
-                    Book Now
-                  </button>
-                )}
-              </div>
-            </li>
-          ))}
+          {slots.length > 0 ? (
+            slots.map((slot, index) => (
+              <li key={index} className="bg-white p-4 shadow rounded-lg">
+                <div>Time: {`${slot.starttime} - ${slot.endtime}`}</div>
+                <div>Mode: {slot.mode}</div>
+                <div>
+                  {slot.isBooked ? (
+                    <button className="bg-gray-400 text-white py-2 px-4 rounded cursor-not-allowed" disabled>
+                      Booked
+                    </button>
+                  ) : (
+                    <button
+                      className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-700"
+                      onClick={() => handleBookSlot(slot)}
+                    >
+                      Book Now
+                    </button>
+                  )}
+                </div>
+              </li>
+            ))
+          ) : (
+            <div className="text-center text-gray-500">No slots available</div>
+          )}
         </ul>
       </div>
     </div>
