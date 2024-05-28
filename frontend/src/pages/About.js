@@ -10,9 +10,19 @@ import Footer from "../components/Footer";
 import Slider from "../components/Slider";
 import Leo from "../assets/icons/leo.png";
 import Taurus from "../assets/icons/taurus.png";
+import whatsApp from '../assets/WhatsApp.png';
+import '../styles/whatsapp.css';
+
 // import Slider2 from "../components/Slider2";
 
 const About = () => {
+
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=6374151473`;
+  
+  const handleClick = () => {
+    window.open(whatsappUrl, '_blank');
+  };
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleFAQ = () => {
@@ -20,6 +30,11 @@ const About = () => {
   };
 
   return (
+    <div>
+       <div className='fixed top-[75%] right-0 z-50'>
+           <img onClick={handleClick} className='whatsapp-button bg-[#3DDA3A] md:hover:pl-6 md:hover:pr-3 hover:cursor-pointer md:py-2 md:pl-3 rounded-l-full' src={whatsApp} alt="whatsapp" />
+        </div>
+      
     <div className=" quicksand-font">
       <Navbar />
       <div className=" pt-10 ">
@@ -217,6 +232,7 @@ const About = () => {
       <div>
         <Footer />
       </div>
+    </div>
     </div>
   );
 };
