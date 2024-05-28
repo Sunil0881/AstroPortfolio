@@ -21,9 +21,9 @@ const LandingPage = () => {
           <h1 className='text-xl md:text-2xl lg:text-4xl font-bold mb-2 md:mb-4'>
             YOUR FIRST SESSION.
           </h1>
-          <button className="bg-black text-white mt-8 px-4 mb-5 py-2 text-sm lg:px-8 lg:py-4 rounded-lg hover:bg-gray-700">
+           <a href='/contact' ><button className="bg-black text-white mt-8 px-4 mb-5 py-2 text-sm lg:px-8 lg:py-4 rounded-lg hover:bg-gray-700">
             CONNECT
-          </button>   
+          </button>  </a> 
         </div>
         <div className="mt-5 md:mt-0  md:flex-1 hidden md:flex justify-center">
           <img src={wheel} height={500} width={500} alt="Astrology wheel" className="wheel-animation" />

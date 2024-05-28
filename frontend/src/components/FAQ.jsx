@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState } from "react";
 
 const FaqItem = ({ question, answer, bgColor }) => {
@@ -10,11 +9,12 @@ const FaqItem = ({ question, answer, bgColor }) => {
 
   return (
     <div
-      className={` mb-4 p-4 px-8 rounded-md shadow-sm`}
+      className={`mb-4 p-4 px-8 rounded-md shadow-sm cursor-pointer`}
       style={{ backgroundColor: "#FFB02E" }}
+      onClick={toggleAnswer} // Move onClick handler to the outer div
     >
       <div className="flex justify-between items-center">
-        <p className="cursor-pointer text-xl md:text-2xl font-semibold" onClick={toggleAnswer}>
+        <p className="text-xl md:text-2xl font-semibold">
           {question}
         </p>
         <svg
@@ -23,10 +23,9 @@ const FaqItem = ({ question, answer, bgColor }) => {
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          className={`dropdown-icon w-6 md:w-8 h-6 md:h-8 transition-transform duration-700 cursor-pointer ${
+          className={`dropdown-icon w-6 md:w-8 h-6 md:h-8 transition-transform duration-700 ${
             isOpen && "rotate-180"
           }`}
-          onClick={toggleAnswer}
         >
           <path
             stroke-linecap="round"
@@ -74,7 +73,7 @@ const FAQ = () => {
   ];
 
   return (
-    <div className=" w-full md:w-[60%] py-8">
+    <div className="w-full md:w-[60%] py-8">
       {faqs.map((faq, index) => (
         <FaqItem
           key={index}
