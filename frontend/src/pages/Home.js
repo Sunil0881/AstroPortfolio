@@ -9,10 +9,19 @@ import TestimonialSection from '../components/Testamonial'
 import Footer from '../components/Footer'
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import whatsApp from '../assets/WhatsApp.png';
+import '../styles/whatsapp.css';
 
 
 
 const Home = () => {
+
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=6374151473`;
+  
+  const handleClick = () => {
+    window.open(whatsappUrl, '_blank');
+  };
+  
 
   const location = useLocation();
 
@@ -28,6 +37,9 @@ const Home = () => {
   return (
     <div className=' quicksand-font'>
         <Navbar />
+        <div className='fixed top-[75%] right-0 z-50'>
+           <img onClick={handleClick} className='whatsapp-button bg-[#3DDA3A] md:hover:pl-6 md:hover:pr-3 hover:cursor-pointer md:py-2 md:pl-3 rounded-l-full' src={whatsApp} alt="whatsapp" />
+        </div>
         <LandingPage />
         <NumberRow />
         <div id='service'>
