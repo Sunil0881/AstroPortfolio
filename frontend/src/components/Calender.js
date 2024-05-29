@@ -32,7 +32,6 @@ const Calendar = () => {
       console.log(formattedDate);
       const response = await axios.get(`${urlvar}/api/slots?date=${formattedDate}`);
       
-      // Ensure the data is an array
       const fetchedSlots = Array.isArray(response.data) ? response.data : [];
       setSlots(fetchedSlots);
       console.log(fetchedSlots); // Log the fetched slots
