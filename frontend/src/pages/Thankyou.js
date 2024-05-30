@@ -3,48 +3,21 @@ import { useNavigate } from 'react-router-dom';
 
 const Thankyou = () => {
   const navigate = useNavigate();
-  const [slotId, setSlotId] = useState();
-  const [fetchedData, setFetchedData] = useState(null);
-  const urlvar = 'https://backend-astro.vercel.app';
+  const [bookingData, setBookingData] = useState(null);
 
   useEffect(() => {
-    const storedSlotId = localStorage.getItem('slotId');
-    setSlotId(storedSlotId);
-    const data = localStorage.getItem('fetchedData');
+    // Retrieve booking data from localStorage
+    const data = localStorage.getItem('bookingData');
     if (data) {
-      setFetchedData(JSON.parse(data));
+      setBookingData(JSON.parse(data));
     }
-  }, []);
 
-  const bookSlot = async () => {
-    try {
-      const response = await fetch(`${urlvar}/api/slots/book/${slotId}`, {
-        method: 'PUT'
-      });
-      if (response.ok) {
-        alert("Slot Successfully Booked");
-      } else if (response.status === 400) {
-        alert('Slot is already booked');
-      } else {
-        alert('Server error. Please try again later.');
-      }
-    } catch (error) {
-      console.error('Error booking slot:', error);
-      alert('Server error. Please try again later.');
-    }
-  };
-
-  useEffect(() => {
-    if (slotId) {
-      bookSlot();
-    }
-  }, [slotId]);
-
-  useEffect(() => {
+    // Redirect to the homepage after 5 seconds
     const timer = setTimeout(() => {
       navigate('/');
     }, 5000);
 
+    // Cleanup the timer
     return () => clearTimeout(timer);
   }, [navigate]);
 
@@ -55,23 +28,25 @@ const Thankyou = () => {
           Thank you for booking your slot.
         </h2>
         
-        <div className="w-full flex justify-center mt-6">
-          <svg className="animate-bounce w-16 h-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
-        
-        {fetchedData ? (
+        {bookingData ? (
+          <div className="w-full flex justify-center mt-6">
+            <svg className="animate-bounce w-16 h-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+        ) : null}
+
+        {bookingData ? (
           <div className="mt-4 text-lg text-gray-700">
-            <p>Fetched Data:</p>
-            <pre className="text-left bg-gray-100 p-4 rounded-lg overflow-auto">{JSON.stringify(fetchedData, null, 2)}</pre>
+            <p>Booking Data:</p>
+            <pre className="text-left bg-gray-100 p-4 rounded-lg overflow-auto">{JSON.stringify(bookingData, null, 2)}</pre>
           </div>
         ) : (
           <p className="mt-4 text-lg text-gray-700">
-            Loading fetched data...
+            Loading booking data...
           </p>
         )}
-        
+
         <p className="mt-4 text-lg text-gray-700">
           You will be redirected shortly.
         </p>

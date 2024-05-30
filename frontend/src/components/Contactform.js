@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const ContactForm = () => {
@@ -9,35 +9,75 @@ const ContactForm = () => {
   const time = queryParams.get('time');
   const mode = queryParams.get('mode');
   const slotId = queryParams.get('slotId');
-  const urlvar = 'https://backend-astro.vercel.app';
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch(`${urlvar}/data?date=${encodeURIComponent(date)}&time=${encodeURIComponent(time)}&mode=${encodeURIComponent(mode)}`);
-      if (response.ok) {
-        const data = await response.json();
-        if (data && data.length > 0) {
-          localStorage.setItem('fetchedData', JSON.stringify(data));
-          navigate(`/thankyou`);
-        } else {
-          setTimeout(fetchData, 3000); // Retry after 3 seconds if data is not found
-        }
-      } else {
-        console.error('Error fetching data:', response.statusText);
-        setTimeout(fetchData, 3000); // Retry after 3 seconds on error
-      }
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      setTimeout(fetchData, 3000); // Retry after 3 seconds on error
-    }
-  };
+  const [polling, setPolling] = useState(false);
 
   useEffect(() => {
     if (slotId) {
-      localStorage.setItem('slotId', slotId);
+      setPolling(true);
     }
-    fetchData();
   }, [slotId]);
+
+  useEffect(() => {
+    const pollForData = async () => {
+      if (polling) {
+        const interval = setInterval(async () => {
+          try {
+            const response = await fetch('https://backend-astro.vercel.app/api/latestdata');
+            const result = await response.json();
+            if (response.ok && result) {
+              clearInterval(interval);
+              handleSlotBooking(result);
+            }
+          } catch (error) {
+            console.error('Error polling for data:', error);
+          }
+        }, 5000); // Poll every 5 seconds
+
+        return () => clearInterval(interval);
+      }
+    };
+
+    pollForData();
+  }, [polling]);
+
+  const handleSlotBooking = async (formData) => {
+    try {
+      const response = await fetch('https://backend-astro.vercel.app/api/slots/book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slotId, dataId: formData._id }), // Pass the dataId here
+      });
+  
+      const result = await response.json();
+  
+      if (result.message === 'Slot booked successfully') {
+        const data = {
+          ...formData,
+          isSubmitted: true,
+        };
+  
+        const sendDataResponse = await fetch('https://backend-astro.vercel.app/data', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+  
+        if (sendDataResponse.ok) {
+          localStorage.setItem('bookingData', JSON.stringify(data));
+          navigate('/thankyou');
+        } else {
+          console.error('Error sending data');
+        }
+      } else {
+        alert(result.message);
+        navigate('/');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred');
+      navigate('/');
+    }
+  };
 
   const encodedDate = encodeURIComponent(date);
   const encodedTime = encodeURIComponent(time);
@@ -49,18 +89,20 @@ const ContactForm = () => {
     <div className='flex flex-col items-center justify-center min-h-screen bg-amber-500'>
       <div className='bg-white p-10 rounded-lg shadow-lg text-center'>
         <h2 className='my-10 font-semibold text-3xl text-gray-800'>Please fill out the form below</h2>
-        <iframe
-          src={googleFormUrl}
-          width="800"
-          height="400"
-          frameBorder="0"
-          marginHeight="0"
-          marginWidth="0"
-          title="Contact Form"
-          className="w-full h-screen"
-        >
-          Loading…
-        </iframe>
+        <form onSubmit={(e) => e.preventDefault()}>
+          <iframe
+            src={googleFormUrl}
+            width="800"
+            height="400"
+            frameBorder="0"
+            marginHeight="0"
+            marginWidth="0"
+            title="Contact Form"
+            className="w-full h-screen"
+          >
+            Loading…
+          </iframe>
+        </form>
       </div>
     </div>
   );
