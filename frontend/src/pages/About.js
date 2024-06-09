@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
+import Ganesh from '../assets/ganesha.png'
 import AboutPic from "../assets/about.png";
 import Saturn from "../assets/saturn1.png";
 import Star from "../assets/flower.png";
@@ -43,7 +44,7 @@ const About = () => {
         </div>
         <div className=" pt-12 md:gap-12 lg:gap-20 items-center mx-6 md:mx-14 lg:mx-32 md:flex ">
           <div className=" flex justify-center w-auto md:w-[100%] lg:w-[50%] ">
-            <img className=" h-52 md:h-72 lg:h-96" src={AboutPic}></img>
+            <img className=" h-52 md:h-72 lg:h-96" src={Ganesh}></img>
           </div>
           <div className=" md:w-[100%]">
             <div className=" flex">
@@ -188,11 +189,11 @@ const About = () => {
         </div>
 
         <div className=" mx-6 md:mx-14 lg:mx-32">
-          <img className=" absolute left-0 h-44" src={Star}></img>
+          {/* <img className=" absolute left-0 h-44" src={Star}></img>
           <img
             className=" absolute right-0 animate-pulse opacity-75 h-32 md:h-44"
             src={Leo}
-          ></img>
+          ></img> */}
           <div className=" pt-10">
             <p className=" flex justify-center orange-text-bold font-semibold text-3xl">
               JOURNEY
