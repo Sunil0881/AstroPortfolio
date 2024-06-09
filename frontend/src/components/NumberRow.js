@@ -15,7 +15,7 @@ const NumberRow = () => {
         <img src={star} width={200} height={200} alt="Star" />
       </div>
       <div className='flex md:top-0 overflow-x-hidden' ref={ref}>
-         
+
         <div className='bg-amber-500 text-center px-2 py-2 sm:px-[1%] md:px-[3%] md:py-[3%] lg:px-[4%] lg:py-4 xl:px-[6%] xl:py-4'>
           <h1 className='text-white md:text-xl lg:text-md xl:text-2xl font-bold'>
             {inView && <CountUp start={0} end={1000} duration={2.5} />}+
