@@ -10,13 +10,13 @@ import neptune from "../assets/neptune.png"
 const Planet = () => {
   return (
     <div>
-        <h1 className='font-bold pb-3 text-black sm:text-3xl text-center sm:pb-5 md:pt-10 md:pb-5'>Planet Transit</h1>
+        <h1 className='font-bold pb-3 text-black sm:text-3xl text-center sm:pb-5 md:pt-10 md:pb-5'>General Predictions</h1>
         <p className='text-black text-base pb-10 text-center md:px-32  lg:px-80 md:pb-20 sm:pb-20 '>Astrologer is here to provide solutions for all your astrological needs. We offer a variety of services ranging
 from horoscopes, astrology consultation, numerology to tarot card reading. </p>
         
         <PlanetCard 
         imgSrc={planet1}
-        title='Venus Transit' 
+        title='Guru Transit' 
         description='Ask what does Venus transit signifies for you, love life, relationship, pleasure, luxuries.' 
         imgWidth='100px' 
         imgHeight='130px'
