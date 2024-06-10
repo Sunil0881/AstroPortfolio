@@ -189,11 +189,11 @@ const About = () => {
         </div>
 
         <div className=" mx-6 md:mx-14 lg:mx-32">
-          {/* <img className=" absolute left-0 h-44" src={Star}></img>
+          <img className=" absolute left-0 h-44" src={Star}></img>
           <img
             className=" absolute right-0 animate-pulse opacity-75 h-32 md:h-44"
             src={Leo}
-          ></img> */}
+          ></img>
           <div className=" pt-10">
             <p className=" flex justify-center orange-text-bold font-semibold text-3xl">
               JOURNEY
