@@ -10,7 +10,7 @@ const Card = ({ imgSrc, title, description }) => {
   });
 
   return (
-    <div className='mb-10 bg-white shadow-2xl text-center items-center h-72 sm:px-4 sm:py-5 sm:mb-5 lg:px-3 lg:py-3'>
+    <div className='mb-10 bg-white shadow-lg border-orange-50 rounded border-2 text-center items-center h-72 sm:px-4 sm:py-5 sm:mb-5 lg:px-3 lg:py-3'>
       <div className='flex justify-center pt-5' ref={ref}>
         <motion.img
           src={imgSrc}
@@ -22,8 +22,8 @@ const Card = ({ imgSrc, title, description }) => {
           transition={{ duration: 1, ease: "easeOut", delay: 0.5 }} // Added 2 seconds delay
         />
       </div>
-      <div>
-        <h1 className='text-2xl font-bold pb-2'>{title}</h1>
+      <div className=' p-4'>
+        <h1 className='text-2xl font-semibold pb-2'>{title}</h1>
         <p className='pb-5'>{description}</p>
         <div className='flex justify-center items-center space-x-2'>
           <motion.a 
