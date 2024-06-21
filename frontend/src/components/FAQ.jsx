@@ -13,7 +13,8 @@ const FaqItem = ({ question, answer, bgColor }) => {
       style={{ backgroundColor: "#FFB02E" }}
       onClick={toggleAnswer} // Move onClick handler to the outer div
     >
-      <div className="flex justify-between items-center">
+      <div className=" items-center">
+      <div className="flex justify-between">
         <p className="text-xl md:text-2xl font-semibold">
           {question}
         </p>
@@ -34,7 +35,8 @@ const FaqItem = ({ question, answer, bgColor }) => {
           />
         </svg>
       </div>
-      {isOpen && <div className="answer mt-2">{answer}</div>}
+      </div>
+      {isOpen && <div className="answer font-medium">{answer}</div>}
     </div>
   );
 };
