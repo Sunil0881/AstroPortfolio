@@ -21,6 +21,7 @@ const Services = () => {
           title="Talk & Chat"
           description="Astrologer talk to you for solving your
           problems by online way."
+          />
 
     <div className=''>
       <h1 className='font-bold text-black sm:text-3xl text-center mb-2 sm:pb-5 pt-10 md:pb-5 '>Our Services</h1>
@@ -53,7 +54,8 @@ const Services = () => {
           title="Talk & Chat"
           description="Astrologer talk to you for solving your
           problems by online way."
-
+          />
+        <Card
           title="Horoscope"
           description="Discover what the stars have in store for you today with our accurate horoscope predictions."
           imgSrc={lemon}
@@ -79,7 +81,8 @@ const Services = () => {
           title="Numerology"
           description="Most of the numerology predictions are 
           based on your number."
-
+          />
+        <Card
           title="About Career"
           description="Get detailed numerology predictions and advice to help you make informed career choices."
 
@@ -93,16 +96,16 @@ const Services = () => {
           divination that use an ancient check."
           imgSrc={id}
         />
-      </div>
-
+        <Card
           title="Strength & Weakness"
           description="Discover your strengths and weaknesses through detailed tarot readings and personalized analysis."
           imgSrc={id}
         />
+      </div>
 
       </div>
 
-
+    </div>
     </div>
   );
 };

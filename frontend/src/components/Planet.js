@@ -25,6 +25,7 @@ const Planet = () => {
         description="Ask what does Venus transit signifies for you, love life, relationship, pleasure, luxuries."
         imgWidth="100px"
         imgHeight="130px"
+        />
 
     <div>
         <h1 className='font-bold pb-3 text-black sm:text-3xl text-center sm:pb-5 md:pt-10 md:pb-5'>General Predictions</h1>
@@ -78,6 +79,7 @@ from horoscopes, astrology consultation, numerology to tarot card reading. </p>
         imgWidth="180px"
         imgHeight="130px"
       />
+    </div>
     </div>
   );
 };

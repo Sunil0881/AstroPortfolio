@@ -6,6 +6,8 @@ import Login from './pages/admin/Login';
 import Admin from './pages/admin/Admin';
 import ContactForm from './components/Contactform';
 import Thankyou from './pages/Thankyou';
+import BlogUploadPage from './pages/BlogUploadPage';
+import BlogDisplayPage from './pages/BlogDisplayPage';
 
 
 
@@ -22,6 +24,8 @@ function App() {
               <Route path='/adminpage' element={isLoggedIn === 'true'? <Admin />:<Login />} />
               <Route path='/contactform' element={ <ContactForm />} />
               <Route path="/thankyou" element={<Thankyou />} />
+              <Route path="/upload" element={<BlogUploadPage />} />
+              <Route path="/display" element={<BlogDisplayPage />} />
             </Routes>
           </Router>
     
