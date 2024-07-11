@@ -8,6 +8,7 @@ import ContactForm from './components/Contactform';
 import Thankyou from './pages/Thankyou';
 import BlogUploadPage from './pages/BlogUploadPage';
 import BlogDisplayPage from './pages/BlogDisplayPage';
+import BlogDetailPage from './components/BlogDetailPage';
 
 
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="/thankyou" element={<Thankyou />} />
               <Route path="/upload" element={<BlogUploadPage />} />
               <Route path="/display" element={<BlogDisplayPage />} />
+              <Route path="/blog/:id" element={<BlogDetailPage />} />
             </Routes>
           </Router>
     

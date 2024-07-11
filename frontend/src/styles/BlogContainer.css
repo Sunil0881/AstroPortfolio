@@ -1,0 +1,29 @@
+.blog-container {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .blog-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Ensure that list items are styled correctly */
+  .blog-container ul,
+  .blog-container ol {
+    padding-left: 20px; /* Add some left padding for indentation */
+    margin-bottom: 10px; /* Add some space below the list */
+  }
+  
+  .blog-container ul {
+    list-style-type: disc; /* Bullet points */
+  }
+  
+  .blog-container ol {
+    list-style-type: decimal; /* Numbered list */
+  }
+  
+  .blog-container li {
+    margin-bottom: 5px; /* Add some space below each list item */
+  }  
