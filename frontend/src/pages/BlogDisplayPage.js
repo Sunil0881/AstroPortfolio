@@ -4,7 +4,7 @@ import '../styles/BlogContainer.css';
 
 const BlogDisplayPage = () => {
   const [blogs, setBlogs] = useState([]);
-  const urlvar = 'http://localhost:5000';
+  const urlvar = 'https://backend-astro.vercel.app';
 
   useEffect(() => {
     const fetchBlogs = async () => {
