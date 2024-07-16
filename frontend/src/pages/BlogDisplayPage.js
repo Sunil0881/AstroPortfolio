@@ -22,15 +22,17 @@ const BlogDisplayPage = () => {
 
   return (
     <div>
-      {blogs.map((blog) => (
-        <div key={blog._id} className="blog-container">
-          <h2>{blog.title}</h2>
-          {blog.image && <img src={blog.image} alt={blog.title} className="blog-image" />}
-          {renderBlogContent(blog)}
-          <Link to={`/blog/${blog._id}`} className="read-more-button">Read More</Link>
-        </div>
-      ))}
-    </div>
+    {blogs.map((blog) => (
+      <div key={blog._id} className="blog-container">
+        <h2>{blog.title}</h2>
+        {blog.image && <img src={blog.image} alt={blog.title} className="blog-image" />}
+        {renderBlogContent(blog)}
+        <Link to={`/blog/${blog._id}`} className="read-more-button">Read More</Link>
+      </div>
+    ))}
+  </div>
+
+
   );
 };
 
