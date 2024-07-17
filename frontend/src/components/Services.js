@@ -19,6 +19,9 @@ const Services = () => {
           description="Get personalized pariharams from astrologers to bring positive changes."
 
           imgSrc={call}
+          buttonText="READ MORE"
+          
+          buttonLink="/blog/66983ce0dd7bdcd571a6f54d"
         />
 
         <Card
@@ -26,23 +29,29 @@ const Services = () => {
           title="Numerology"
           description="Most of the numerology predictions are based on your number."
           imgSrc={lemon}
+          buttonText="READ MORE"
+          buttonLink="/blog/66983f51dd7bdcd571a6f56a"
+          
         />
 
         <Card
           title="Tarot"
           description="Tarot reading is a powerful form of divination that use an ancient check."
           imgSrc={id}
+          buttonText="READ MORE"
         />
 
         <Card
           title="Talk & Chat"
           description="Astrologer talk to you for solving yourproblems by online way."
           imgSrc={call}
+          buttonText="READ MORE"
           />
         <Card
           title="Horoscope"
           description="Discover your daily horoscope with accurate predictions."
           imgSrc={lemon}
+          buttonText="READ MORE"
         />
 
 
@@ -50,6 +59,7 @@ const Services = () => {
           title="Marriage Matching"
           description="Find your perfect match by astrology-based marriage compatibility analysis"
           imgSrc={id}
+          buttonText="READ MORE"
         />
 
 
@@ -58,6 +68,7 @@ const Services = () => {
           description="Explore insights about child birth by astrological guidance and analysis."
 
           imgSrc={call}
+          buttonText="READ MORE"
         />
 
         <Card
@@ -65,12 +76,14 @@ const Services = () => {
           title="Numerology"
           description="Most of the numerology predictions are based on your number."
           imgSrc={lemon}
+          buttonText="READ MORE"
           />
         <Card
           title="About Career"
           description="Get detailed numerology predictions  to make informed career choices."
 
           imgSrc={lemon}
+          buttonText="READ MORE"
         />
 
         <Card
@@ -79,11 +92,13 @@ const Services = () => {
           description="Tarot reading is a powerful form of 
           divination that use an ancient check."
           imgSrc={id}
+          buttonText="READ MORE"
         />
         <Card
           title="Strength & Weakness"
           description="Explore strengths and weaknesses by tarot readings and analysis."
           imgSrc={id}
+          buttonText="READ MORE"
         />
       </div>
 
