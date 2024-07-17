@@ -47,11 +47,11 @@ const Navbar = () => {
           <button onClick={handleServiceClick} className="text-black hover:scale-95 text-xl">
             Service
           </button>
-          <Link to="/contact" className="text-black hover:scale-95 text-xl">
-            Contact Us
+          <Link to="/display" className="text-black hover:scale-95 text-xl">
+            Blogs
           </Link>
           <a href='/contact' ><button className="text-amber-500 p-2 px-4 bg-stone-800 hover:bg-stone-700 hover:scale-95 rounded text-xl">
-            Get in touch
+            Contact Us
           </button></a>
         </nav>
       </div>

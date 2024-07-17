@@ -19,7 +19,7 @@ const BlogDetailPage = () => {
   if (!blog) return <div>Loading...</div>;
 
   return (
-    <div className="bg-orange-400 px-4 py-10 min-h-screen">
+    <div className="bg-[#FFB02E]  px-4 py-10 min-h-screen">
   <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
     <h2 className="font-bold text-3xl text-gray-800 px-4 pt-6">{blog.title}</h2>
     {blog.image && (
