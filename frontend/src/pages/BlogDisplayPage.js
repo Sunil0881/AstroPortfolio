@@ -21,16 +21,24 @@ const BlogDisplayPage = () => {
   };
 
   return (
-    <div>
-      {blogs.map((blog) => (
-        <div key={blog._id} className="blog-container">
-          <h2>{blog.title}</h2>
-          {blog.image && <img src={blog.image} alt={blog.title} className="blog-image" />}
+    <div className="bg-orange-400 px-4 py-10">
+  <h1 className="text-3xl font-semibold text-white text-center pb-5">Blogs</h1>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {blogs.map((blog) => (
+      <div key={blog._id} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+        <h2 className="font-bold text-2xl text-gray-800 px-4 pt-4">{blog.title}</h2>
+        {blog.image && <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover" />}
+        <div className="p-4 flex-grow flex flex-col">
           {renderBlogContent(blog)}
-          <Link to={`/blog/${blog._id}`} className="read-more-button">Read More</Link>
+          <Link to={`/blog/${blog._id}`} className="text-orange-500 mt-4 font-semibold hover:text-orange-700">Read More</Link>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+
   );
 };
 

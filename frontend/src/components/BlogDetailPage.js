@@ -19,11 +19,20 @@ const BlogDetailPage = () => {
   if (!blog) return <div>Loading...</div>;
 
   return (
-    <div className="blog-container">
-      <h2>{blog.title}</h2>
-      {blog.image && <img src={blog.image} alt={blog.title} className="blog-image" />}
-      <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+    <div className="bg-orange-400 px-4 py-10 min-h-screen">
+  <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+    <h2 className="font-bold text-3xl text-gray-800 px-4 pt-6">{blog.title}</h2>
+    {blog.image && (
+      <div className="h-96 overflow-hidden">
+        <img src={blog.image} alt={blog.title} className="w-full h-full object-cover" />
+      </div>
+    )}
+    <div className="p-6">
+      <div dangerouslySetInnerHTML={{ __html: blog.content }} className="text-gray-700" />
     </div>
+  </div>
+</div>
+
   );
 };
 
