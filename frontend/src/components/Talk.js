@@ -10,7 +10,7 @@ import purse from "../assets/purse.png";
 const Talk = () => {
   return (
     <div className=" mx-6 md:mx-14 lg:mx-32">
-      <h1 className="font-semibold pb-3 text-2xl lg:text-3xl text-center sm:pb-5 md:pb-5">
+      <h1 className="font-bold pb-3 text-3xl lg:text-3xl text-center sm:pb-5 md:pb-5">
         Talk to Astrologer About
       </h1>
       <p className="text-black text-base pb-7 text-center md:px-32 sm:pb-10  lg:px-80 md:pb-10">
