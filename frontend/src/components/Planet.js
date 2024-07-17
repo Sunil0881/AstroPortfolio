@@ -9,23 +9,7 @@ import neptune from "../assets/neptune.png";
 const Planet = () => {
   return (
 
-    <div className=" mx-6 md:mx-14 lg:mx-32">
-      <h1 className="font-semibold pb-3 text-2xl lg:text-3xl text-center md:pt-10">
-        Planet Transit
-      </h1>
-      <p className="pb-10 text-center md:px-32  lg:px-80">
-        Astrologer is here to provide solutions for all your astrological needs.
-        We offer a variety of services ranging from horoscopes, astrology
-        consultation, numerology to tarot card reading.
-      </p>
-
-      <PlanetCard
-        imgSrc={planet1}
-        title="Venus Transit"
-        description="Ask what does Venus transit signifies for you, love life, relationship, pleasure, luxuries."
-        imgWidth="100px"
-        imgHeight="130px"
-        />
+    
 
     <div>
         <h1 className='font-bold pb-3 text-black sm:text-3xl text-center sm:pb-5 md:pt-10 md:pb-5'>General Predictions</h1>
@@ -80,7 +64,7 @@ from horoscopes, astrology consultation, numerology to tarot card reading. </p>
         imgHeight="130px"
       />
     </div>
-    </div>
+   
   );
 };
 
