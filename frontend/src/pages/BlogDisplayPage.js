@@ -26,7 +26,7 @@ const BlogDisplayPage = () => {
       <Navbar />
     <div className=" px-4 py-10">
   <h1 className="text-3xl font-semibold text-black text-center pb-5">Blogs</h1>
-  <p className='text-center pb-4 mx-96'>Welcome to the Astrologer Blog, your go-to resource for insightful articles, tips, and updates on everything related to astrology</p>
+  <p className=',x-3 text-center pb-4 md:mx-24 lg:mx-96'>Welcome to the Astrologer Blog, your go-to resource for insightful articles, tips, and updates on everything related to astrology</p>
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-3">
     {blogs.map((blog) => (
       <div key={blog._id} className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col ">

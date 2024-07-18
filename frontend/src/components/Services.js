@@ -95,7 +95,7 @@ const Services = () => {
           buttonText="READ MORE"
         />
         <Card
-          title="Strength & Weakness"
+          title="Strength & Weak"
           description="Explore strengths and weaknesses by tarot readings and analysis."
           imgSrc={id}
           buttonText="READ MORE"
