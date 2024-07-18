@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import arrow from "../assets/arrow-left.png";
 
-const Card = ({ imgSrc, title, description }) => {
+const Card = ({ imgSrc, title, description, buttonText = "CONTACT", buttonLink = "/contact" }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1, // Adjust this value as needed
@@ -27,17 +27,17 @@ const Card = ({ imgSrc, title, description }) => {
         <p className='pb-5'>{description}</p>
         <div className='flex justify-center items-center space-x-2'>
           <motion.a 
-            href='/contact' 
+            href={buttonLink} 
             className='font-bold text-amber-500'
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, ease: "easeOut", delay: 0.5 }} // Added 2 seconds delay
             whileHover={{ color: '#D97706', transition: { duration: 0.3 } }}
           >
-            CONTACT
+            {buttonText} {/* Display dynamic text */}
           </motion.a>
           <motion.a 
-            href='/contact' 
+            href={buttonLink} 
             className='arrow-container'
             initial={{ opacity: 0, x: -20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}

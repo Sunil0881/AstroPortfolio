@@ -34,7 +34,7 @@ const TestimonialSection = () => {
   return (
     <div>
       <div>
-        <h1 className="font-semibold text-2xl lg:text-3xl text-center sm:pt-20 sm:pb-2">
+        <h1 className="font-bold text-3xl lg:text-3xl text-center sm:pt-20 sm:pb-2">
           Some Laurels About
         </h1>
         <div className="flex justify-center pb-10">

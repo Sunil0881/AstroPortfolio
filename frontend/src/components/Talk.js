@@ -1,13 +1,16 @@
 import React from "react";
 import Card from "./Card";
-import lemon from "../assets/lemon.png";
-import call from "../assets/call.png";
-import id from "../assets/id.png";
+import health from "../assets/health.png";
+import career from "../assets/career.png";
+import legal from "../assets/legal.png";
+import love from "../assets/love.png";
+import partner from "../assets/partner.png";
+import purse from "../assets/purse.png";
 
 const Talk = () => {
   return (
     <div className=" mx-6 md:mx-14 lg:mx-32">
-      <h1 className="font-semibold pb-3 text-2xl lg:text-3xl text-center sm:pb-5 md:pb-5">
+      <h1 className="font-bold pb-3 text-3xl lg:text-3xl text-center sm:pb-5 md:pb-5">
         Talk to Astrologer About
       </h1>
       <p className="text-black text-base pb-7 text-center md:px-32 sm:pb-10  lg:px-80 md:pb-10">
@@ -17,45 +20,41 @@ const Talk = () => {
       </p>
       <div className=" pt-6 sm:block md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 md:gap-10 lg:gap-12 ">
         <Card
-          title="Talk & Chat"
-          description="Astrologer talk to you for solving your
-          problems by online way."
-          imgSrc={call}
+          title="Love"
+          description="Everyone needs love and compassion. The right time and partner is all it requires."
+          imgSrc={love}
         />
 
         <Card
-          title="Numerology"
-          description="Most of the numerology predictions are 
-          based on your number."
-          imgSrc={lemon}
+          title="Money"
+          description="Money is the most basic requirement, beat it might not come to everyone that easy. "
+          imgSrc={purse}
         />
 
         <Card
-          title="Tarot"
-          description="Tarot reading is a powerful form of 
-          divination that use an ancient check."
-          imgSrc={id}
+          title="Partner"
+          description="Everyone needs a perfect the partner
+and a happy married life. "
+          imgSrc={partner}
         />
 
         <Card
-          title="Talk & Chat"
-          description="Astrologer talk to you for solving your
-          problems by online way."
-          imgSrc={call}
+          title="Health"
+          description="Health is in true sense wealth. One cannot afford to lose of any cost."
+          imgSrc={health}
         />
 
         <Card
-          title="Numerology"
-          description="Most of the numerology predictions are 
-          based on your number."
-          imgSrc={lemon}
+          title="Career"
+          description="Career progress can stagnate. Learn the right paths to overcome this."
+          imgSrc={career}
         />
 
         <Card
-          title="Tarot"
-          description="Tarot reading is a powerful form of 
-          divination that use an ancient check."
-          imgSrc={id}
+          title="Legal Issues"
+          description="
+Avoid draining legal issues by understanding the movements of the stars."
+          imgSrc={legal}
         />
       </div>
     </div>

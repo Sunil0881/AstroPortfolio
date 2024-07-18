@@ -32,15 +32,16 @@ const MobileMenu = ({ isOpen, onClose }) => {
         <button onClick={handleServiceClick} className="text-black text-xl">
           Service
         </button>
-        <a href="/contact" className="text-black text-xl" onClick={onClose}>
-          Contact Us
+        <a href="/display" className="text-black text-xl" onClick={onClose}>
+          Blogs
         </a>
+       <a href='/contact'>
         <button
           className="text-amber-500 px-2 py-1 bg-stone-800 rounded-sm text-xl"
           onClick={onClose}
         >
-          Get in touch
-        </button>
+          Contact Us
+        </button></a>
       </nav>
     </div>
   );
