@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogEditor from '../components/BlogEditor';
+import AdminNav from '../components/AdminNav'
 
 const BlogUploadPage = () => {
   const urlvar = 'https://backend-astro.vercel.app';
@@ -29,6 +30,7 @@ const BlogUploadPage = () => {
 
   return (
     <div>
+      <AdminNav />
       <BlogEditor onSave={handleSaveBlog} />
     </div>
   );

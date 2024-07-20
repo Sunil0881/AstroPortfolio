@@ -22,7 +22,7 @@ const Login = () => {
           if (response.ok) {
             console.log(data.message);
             window.localStorage.setItem("authenticated", true);
-            window.location.href = "./adminpage";
+            window.location.href = "./admin";
           } else {
             alert("Authentication failed. Please check your credentials.");
           }

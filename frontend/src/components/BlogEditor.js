@@ -24,10 +24,10 @@ const BlogEditor = ({ onSave }) => {
   };
 
   return (
-    <div className='bg-[#FFB02E] h-screen'>
-    <div className='px-4 md:px-6 lg:px-72 pt-20  bg-[#FFB02E]  '>
-      <h1 className='text-2xl md:text-4xl font-semibold text-center pb-10 text-white'>Upload Your Blog Here</h1>
-    <div className='bg-white rounded-3xl '>
+    <div className='  '>
+    <div className='px-4 md:px-6 lg:px-72 pt-20  '>
+      <h1 className='text-2xl md:text-4xl font-semibold text-center pb-10 '>Upload Your Blog Here</h1>
+    <div className='bg-white rounded-3xl shadow-2xl shadow-slate-500'>
       <div className='flex justify-center pt-3 pb-3'>
       <input className='text-center '
         type="text"
