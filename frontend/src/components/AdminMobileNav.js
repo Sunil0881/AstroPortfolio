@@ -1,9 +1,15 @@
 // src/MobileMenu.js
 
+import { Link, useNavigate } from "react-router-dom";
+
 
 const MobileMenu = ({ isOpen, onClose }) => {
  
-
+  const navigate = useNavigate();
+  const Logout = () => {
+    window.localStorage.clear();
+    navigate("/");
+  }
  
 
   return (
@@ -19,13 +25,13 @@ const MobileMenu = ({ isOpen, onClose }) => {
         </button>
       </div>
       <nav className="flex flex-col items-center mt-8 space-y-4">
-        <a href="/addslot" className="text-black text-xl" onClick={onClose}>
+        <Link to="/addslot" className="text-black text-xl" onClick={onClose}>
           AddSlot
-        </a>
-        <a href="/Upload" className="text-black text-xl" onClick={onClose}>
+        </Link>
+        <Link to="/Upload" className="text-black text-xl" onClick={onClose}>
           AddBlog
-        </a>
-        
+        </Link>
+        <button className='bg-orange-500 px-1 py-1 rounded-lg hover:scale-95 hover:bg-orange-600' onClick={Logout}>Log Out</button>
       </nav>
     </div>
   );

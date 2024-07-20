@@ -3,16 +3,21 @@ import React from 'react'
 import Moon from '../assets/moon.png'
 import Recline from '../assets/recline.png'
 import MobileMenu from './AdminMobileNav';
-import { Link  } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const Logout = () => {
+    window.localStorage.clear();
+    navigate("/");
+  }
 
   
 
@@ -42,7 +47,7 @@ const Navbar = () => {
           <Link to="/Upload" className="text-black hover:scale-95 text-xl">
             AddBlog
           </Link>
-          
+          <button className='bg-orange-500 px-1 py-1 rounded-lg hover:scale-95 hover:bg-orange-600' onClick={Logout}>Log Out</button>
         </nav>
       </div>
       <MobileMenu isOpen={isMobileMenuOpen} onClose={toggleMobileMenu} />

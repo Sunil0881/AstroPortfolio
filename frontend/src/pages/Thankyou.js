@@ -71,6 +71,7 @@ const Thankyou = () => {
         setTimeout(() => {
           navigate('/');
         }, 5000);
+        window.localStorage.clear();
       })
       .catch((error) => {
         console.error('Email could not be sent:', error);
