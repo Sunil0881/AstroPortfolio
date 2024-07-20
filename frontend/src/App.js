@@ -3,12 +3,13 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Login from './pages/admin/Login';
-import Admin from './pages/admin/Admin';
+import Addslot from './pages/admin/Addslot';
 import ContactForm from './components/Contactform';
 import Thankyou from './pages/Thankyou';
 import BlogUploadPage from './pages/BlogUploadPage';
 import BlogDisplayPage from './pages/BlogDisplayPage';
 import BlogDetailPage from './components/BlogDetailPage';
+
 
 
 
@@ -22,10 +23,11 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
               <Route path='/login'  element={<Login />} />
-              <Route path='/adminpage' element={isLoggedIn === 'true'? <Admin />:<Login />} />
+              <Route path='/admin' element={isLoggedIn === 'true'? <Addslot />:<Login />} />
+              <Route path='/addslot' element={isLoggedIn === 'true'? <Addslot />:<Login />} />
               <Route path='/contactform' element={ <ContactForm />} />
               <Route path="/thankyou" element={<Thankyou />} />
-              <Route path="/upload" element={<BlogUploadPage />} />
+              <Route path="/upload" element={isLoggedIn === 'true'? <BlogUploadPage />:<Login />} />
               <Route path="/display" element={<BlogDisplayPage />} />
               <Route path="/blog/:id" element={<BlogDetailPage />} />
             </Routes>

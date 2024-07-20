@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import AdminNav from "../../components/AdminNav"
 
-const Admin = () => {
+const Addslot = () => {
   const [date, setDate] = useState('');
   const [starttime, setStartTime] = useState(''); // Update variable names to match backend schema
   const [endtime, setEndTime] = useState(''); // Update variable names to match backend schema
@@ -24,6 +25,7 @@ const Admin = () => {
 
   return (
     <div >
+      <AdminNav />
       <div className='flex justify-center text-3xl'>
         <div className=''>
             Admin
@@ -85,4 +87,4 @@ const Admin = () => {
   )
 }
 
-export default Admin
+export default Addslot
