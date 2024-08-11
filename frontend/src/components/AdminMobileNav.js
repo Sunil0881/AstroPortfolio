@@ -26,10 +26,13 @@ const MobileMenu = ({ isOpen, onClose }) => {
       </div>
       <nav className="flex flex-col items-center mt-8 space-y-4">
         <Link to="/addslot" className="text-black text-xl" onClick={onClose}>
-          AddSlot
+          Add Slot
         </Link>
         <Link to="/Upload" className="text-black text-xl" onClick={onClose}>
-          AddBlog
+          Add Blog
+        </Link>
+        <Link to="/deleteblog" className="text-black text-xl" onClick={onClose}>
+          Delete Blog
         </Link>
         <button className='bg-orange-500 px-1 py-1 rounded-lg hover:scale-95 hover:bg-orange-600' onClick={Logout}>Log Out</button>
       </nav>

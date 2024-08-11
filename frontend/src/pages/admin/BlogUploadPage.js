@@ -1,6 +1,6 @@
 import React from 'react';
-import BlogEditor from '../components/BlogEditor';
-import AdminNav from '../components/AdminNav'
+import BlogEditor from '../../components/BlogEditor';
+import AdminNav from '../../components/AdminNav'
 
 const BlogUploadPage = () => {
   const urlvar = 'https://backend-astro.vercel.app';

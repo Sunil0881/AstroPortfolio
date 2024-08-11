@@ -42,10 +42,13 @@ const Navbar = () => {
         </div>
         <nav className="hidden items-center md:flex lg:gap-8 md:gap-4 md:mt-7">
           <Link to="/addslot" className="text-black hover:scale-95 text-xl">
-            AddSlot
+            Add Slot
           </Link>
           <Link to="/Upload" className="text-black hover:scale-95 text-xl">
-            AddBlog
+            Add Blog
+          </Link>
+          <Link to="/deleteblog" className="text-black hover:scale-95 text-xl">
+            Delete Blog
           </Link>
           <button className='bg-orange-500 px-1 py-1 rounded-lg hover:scale-95 hover:bg-orange-600' onClick={Logout}>Log Out</button>
         </nav>

@@ -6,9 +6,10 @@ import Login from './pages/admin/Login';
 import Addslot from './pages/admin/Addslot';
 import ContactForm from './components/Contactform';
 import Thankyou from './pages/Thankyou';
-import BlogUploadPage from './pages/BlogUploadPage';
+import BlogUploadPage from './pages/admin/BlogUploadPage';
 import BlogDisplayPage from './pages/BlogDisplayPage';
 import BlogDetailPage from './components/BlogDetailPage';
+import DeleteBlog from './pages/admin/DeleteBlog';
 
 
 
@@ -29,6 +30,7 @@ function App() {
               <Route path="/thankyou" element={<Thankyou />} />
               <Route path="/upload" element={isLoggedIn === 'true'? <BlogUploadPage />:<Login />} />
               <Route path="/display" element={<BlogDisplayPage />} />
+              <Route path="/deleteblog" element={<DeleteBlog />} />
               <Route path="/blog/:id" element={<BlogDetailPage />} />
             </Routes>
           </Router>
