@@ -65,7 +65,6 @@ const BlogEditor = ({ onSave }) => {
   const handleImageUpload = (file) => {
     const storage = getStorage(app);
     const storageRef = ref(storage, `images/${file.name}`);
-
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     setUploading(true);
@@ -121,7 +120,7 @@ const BlogEditor = ({ onSave }) => {
 
   const handleAddNewCategory = async () => {
     if (categoryInput && !categories.some(cat => cat.name.toLowerCase() === categoryInput.toLowerCase())) {
-      await fetch('https://backend-astro.vercel.app/api/add-category', {
+      await fetch('http://localhost:5000/api/add-category', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ category: categoryInput })
