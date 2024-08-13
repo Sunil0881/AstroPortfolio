@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 const BlogDisplayPage = () => {
@@ -7,7 +7,17 @@ const BlogDisplayPage = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-  const urlvar = 'http://localhost:5000';
+  const urlvar = 'https://backend-astro.vercel.app';
+
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const category = params.get('category') || '';
+    setSelectedCategory(category);
+  }, [location]);
+
 
   useEffect(() => {
     const fetchBlogs = async () => {

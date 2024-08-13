@@ -23,7 +23,7 @@ const BlogEditor = ({ onSave }) => {
   // Fetch categories on component mount
   useEffect(() => {
     const fetchCategories = async () => {
-      const response = await fetch('http://localhost:5000/api/getcategories');
+      const response = await fetch('https://backend-astro.vercel.app/api/getcategories');
       const data = await response.json();
       setCategories(data);
       setSuggestedCategories(data); // Initially, show all categories
@@ -120,7 +120,7 @@ const BlogEditor = ({ onSave }) => {
 
   const handleAddNewCategory = async () => {
     if (categoryInput && !categories.some(cat => cat.name.toLowerCase() === categoryInput.toLowerCase())) {
-      await fetch('http://localhost:5000/api/add-category', {
+      await fetch('https://backend-astro.vercel.app/api/add-category', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ category: categoryInput })
