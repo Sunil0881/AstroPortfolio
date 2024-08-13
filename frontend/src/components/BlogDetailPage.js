@@ -27,6 +27,9 @@ const BlogDetailPage = () => {
         <img src={blog.image} alt={blog.title} className="w-full h-full object-cover" />
       </div>
     )}
+    <div className="text-sm w-fit my-5 mx-5 text-center text-gray-600 p-1 border-2 border-gray-600 rounded-xl">
+      {blog.category}
+    </div>
     <div className="p-6">
       <div dangerouslySetInnerHTML={{ __html: blog.content }} className="text-gray-700" />
     </div>
