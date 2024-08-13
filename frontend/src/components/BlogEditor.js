@@ -65,6 +65,7 @@ const BlogEditor = ({ onSave }) => {
   const handleImageUpload = (file) => {
     const storage = getStorage(app);
     const storageRef = ref(storage, `images/${file.name}`);
+
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     setUploading(true);
