@@ -10,6 +10,7 @@ import BlogUploadPage from './pages/admin/BlogUploadPage';
 import BlogDisplayPage from './pages/BlogDisplayPage';
 import BlogDetailPage from './components/BlogDetailPage';
 import DeleteBlog from './pages/admin/DeleteBlog';
+import ViewData from './pages/admin/ViewData';
 
 
 
@@ -31,6 +32,7 @@ function App() {
               <Route path="/upload" element={isLoggedIn === 'true'? <BlogUploadPage />:<Login />} />
               <Route path="/display" element={<BlogDisplayPage />} />
               <Route path="/deleteblog" element={<DeleteBlog />} />
+              <Route path="/viewdata" element={<ViewData />} />
               <Route path="/blog/:id" element={<BlogDetailPage />} />
             </Routes>
           </Router>

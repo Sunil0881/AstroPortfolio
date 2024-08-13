@@ -3,7 +3,9 @@ import BlogEditor from '../../components/BlogEditor';
 import AdminNav from '../../components/AdminNav'
 
 const BlogUploadPage = () => {
-  const urlvar = 'https://backend-astro.vercel.app';
+  // const urlvar = 'https://backend-astro.vercel.app';
+  const urlvar = 'http://localhost:5000';
+
 
   const handleSaveBlog = async (blog) => {
     try {
