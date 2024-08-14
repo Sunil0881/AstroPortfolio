@@ -7,7 +7,7 @@ import '../styles/wheelAnimation.css'; // Import CSS file for wheel animation
 const LandingPage = () => {
   return (
     <div>
-      <main className="pt-16 xl:mb-4 lg:mb-10 xl:pb-5 md:flex justify-between md:pl-5 md:pr-5 lg:pl-16 lg:pr-10 md:items-center md:my-4">
+      <main className="reddit-sans pt-16 xl:mb-4 lg:mb-10 xl:pb-5 md:flex justify-between md:pl-5 md:pr-5 lg:pl-16 lg:pr-10 md:items-center md:my-4">
         <div className="md:flex-1  px-10 lg:pt-5">
           <h1 className="text-xl md:text-3xl lg:text-4xl font-semibold mb-2 md:mb-6">
             Got Any Questions?
