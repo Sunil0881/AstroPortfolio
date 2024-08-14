@@ -98,7 +98,7 @@ const BlogDisplayPage = () => {
               <div className="text-gray-700 flex-grow overflow-hidden">
                 <div
                   dangerouslySetInnerHTML={{ __html: blog.content.slice(0, 100) }}
-                  className="text-gray-700 line-clamp-3 h-16"
+                  className="text-gray-700 line-clamp-3  h-16"
                 />
               </div>
               <div className="mt-auto">
