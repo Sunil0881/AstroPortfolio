@@ -62,13 +62,13 @@ const Services = () => {
           buttonText="READ MORE"
           buttonLink={`/display?category=Child Birth`}
         />
-        <Card
+        {/* <Card
           title="Numerology"
           description="Most of the numerology predictions are based on your number."
           imgSrc={lemon}
           buttonText="READ MORE"
           buttonLink={`/display?category=Numerology`}
-        />
+        /> */}
         <Card
           title="About Career"
           description="Get detailed numerology predictions to make informed career choices."
