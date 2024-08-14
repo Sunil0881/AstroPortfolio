@@ -68,7 +68,7 @@ const BlogDetailPage = () => {
           </div>
         )}
         
-        <div className="text-sm w-fit my-5 mx-5 text-center text-gray-600 px-3 py-1 border-2 border-gray-600 rounded-xl">
+        <div className="text-sm w-fit my-5 mx-5 text-center text-gray-600 px-3 py-1 border-2 border-gray-600 rounded-2xl">
           {blog.category}
         </div>  
         
