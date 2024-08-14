@@ -58,10 +58,6 @@ const BlogDisplayPage = () => {
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
   };
-  
-  const handleBlogDescription = (blog) => {
-    dangerouslySetInnerHTML={ __html: blog.content }
-  }
 
   return (
     <div>
