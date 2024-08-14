@@ -64,7 +64,7 @@ const BlogDisplayPage = () => {
       <Navbar />
       <div className="px-4 py-10">
         <h1 className="text-3xl font-semibold text-center mb-5">All Blogs</h1>
-        <div className="mb-5 space-y-5 block md:flex">
+        <div className="mb-5 space-y-5 md:space-y-0 block md:flex">
           <input
             type="text"
             placeholder="Search blogs..."
