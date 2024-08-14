@@ -90,7 +90,7 @@ const BlogDisplayPage = () => {
               <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover mb-2" />
               <p>category: {blog.category}</p>
               <p className="text-gray-700 mb-2">{blog.content.slice(0, 100)}...</p>
-              <Link to={`/blog/${blog._id}`} className="text-blue-500 hover:underline">Read more</Link>
+              <Link to={`/blog/${blog._id}?category=${blog.category}`} className="text-blue-500 hover:underline">Read more</Link>
             </div>
           ))}
         </div>
