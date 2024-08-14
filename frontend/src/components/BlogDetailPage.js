@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import '../styles/BlogContainer.css';
 
 const BlogDetailPage = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
+  const [blogs, setBlogs] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('');
   const urlvar = 'https://backend-astro.vercel.app';
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const category = params.get('category') || '';
+    setSelectedCategory(category);
+  }, [location]);
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -15,6 +25,23 @@ const BlogDetailPage = () => {
     };
     fetchBlog();
   }, [id]);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        console.log('Fetching blogs with:', { selectedCategory });
+        const response = await fetch(`${urlvar}/api/blogsfilter?&category=${encodeURIComponent(selectedCategory)}`);
+        const data = await response.json();
+        console.log('Blogs fetched:', data);
+        setBlogs(data);
+        
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+      }
+    };
+
+    fetchBlogs();
+  }, [selectedCategory]);
 
   if (!blog) return <div>Loading...</div>;
 
@@ -32,6 +59,25 @@ const BlogDetailPage = () => {
     </div>
     <div className="p-6">
       <div dangerouslySetInnerHTML={{ __html: blog.content }} className="text-gray-700" />
+    </div>
+
+    <div>
+      <div>
+        Suggested Blogs
+      </div>
+      <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {blogs.filter((suggestedBlog) => suggestedBlog._id !== blog._id).slice(0, 2).map((blog) => (
+            <div key={blog._id} className="bg-white p-4 rounded-lg shadow-lg">
+              <h2 className="text-xl font-bold mb-2">{blog.title}</h2>
+              <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover mb-2" />
+              <p>category: {blog.category}</p>
+              <p className="text-gray-700 mb-2">{blog.content.slice(0, 100)}...</p>
+              <Link to={`/blog/${blog._id}?category=${blog.category}`} className="text-blue-500 hover:underline">Read more</Link>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </div>
 </div>
