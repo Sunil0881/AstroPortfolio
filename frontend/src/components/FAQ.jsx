@@ -15,7 +15,7 @@ const FaqItem = ({ question, answer, bgColor }) => {
     >
       <div className=" items-center">
       <div className="flex justify-between">
-        <p className="text-xl md:text-2xl font-semibold">
+        <p className="text-xl md:text-2xl font-semibold w-60 md:w-full">
           {question}
         </p>
         <svg

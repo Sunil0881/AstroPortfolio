@@ -50,7 +50,7 @@ const Booking = () => {
           description="Explore insights about child birth by astrological guidance and analysis."
           imgSrc={call}
           buttonText="READ MORE"
-          buttonLink={`/display?category=Child Birth`}
+          buttonLink={`/display?category=Child Birth`} 
         />
         
         <Card

@@ -7,8 +7,8 @@ import call from "../assets/call.png";
 const Services = () => {
   return (
     <div className=''>
-      <h1 className='font-bold text-black text-3xl text-center mb-2 sm:pb-5 pt-10 md:pb-5 '>Our Services</h1>
-      <p className='text-black text-base text-center md:px-32 mb-5  sm:pb-10 lg:px-80 md:pb-10 px-3'>
+      <h1 className='font-bold reddit-sans text-black text-3xl text-center mb-2 sm:pb-5 pt-10 md:pb-5 '>Our Services</h1>
+      <p className='text-black quicksand-font text-base text-center md:px-32 mb-5  sm:pb-10 lg:px-80 md:pb-10 px-3'>
         Astrologer is here to provide solutions for all your astrological needs. We offer a variety of services ranging
         from horoscopes, astrology consultation, numerology to tarot card reading.
       </p>
@@ -49,7 +49,7 @@ const Services = () => {
           buttonText="READ MORE"
           buttonLink={`/display?category=Child Birth`}
         />
-        
+
         <Card
           title="About Career"
           description="Get detailed numerology predictions to make informed career choices."
@@ -62,7 +62,7 @@ const Services = () => {
           description="Explore strengths and weaknesses by tarot readings and analysis."
           imgSrc={id}
           buttonText="READ MORE"
-          buttonLink={`/display?category=Strength & Weak`}
+          buttonLink={`/display?category=Strength & Weak`} 
         />
       </div>
     </div>

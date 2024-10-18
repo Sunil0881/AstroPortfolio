@@ -12,8 +12,8 @@ const Planet = () => {
     
 
     <div>
-        <h1 className='font-bold pb-3 text-black text-3xl text-center sm:pb-5 md:pt-10 md:pb-5'>General Predictions</h1>
-        <p className='text-black text-base pb-10 text-center md:px-32  lg:px-80 md:pb-20 sm:pb-20 px-3'>Astrologer is here to provide solutions for all your astrological needs. We offer a variety of services ranging
+        <h1 className='font-bold pb-3 reddit-sans text-black text-3xl text-center sm:pb-5 md:pt-10 md:pb-5'>General Predictions</h1>
+        <p className='text-black quicksand-font text-base pb-10 text-center md:px-32  lg:px-80 md:pb-20 sm:pb-20 px-3'>Astrologer is here to provide solutions for all your astrological needs. We offer a variety of services ranging
 from horoscopes, astrology consultation, numerology to tarot card reading. </p>
         
         <PlanetCard 

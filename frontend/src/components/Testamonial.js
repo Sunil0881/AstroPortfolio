@@ -34,7 +34,7 @@ const TestimonialSection = () => {
   return (
     <div>
       <div>
-        <h1 className="font-bold text-3xl lg:text-3xl text-center sm:pt-20 sm:pb-2">
+        <h1 className="reddit-sans font-bold text-3xl lg:text-3xl text-center sm:pt-20 sm:pb-2">
           Some Laurels About
         </h1>
         <div className="flex justify-center pb-10">
@@ -42,7 +42,7 @@ const TestimonialSection = () => {
         </div>
       </div>
 
-      <div className=" flex-row lg:grid lg:grid-cols-3 px-5 sm:gap-10 items-center sm:px-5 md:px-10 lg:px-16 mb-10">
+      <div className="quicksand-font flex-row lg:grid lg:grid-cols-3 px-5 sm:gap-10 items-center sm:px-5 md:px-10 lg:px-16 mb-10">
         <div className="lg:pl-24 md:pl-5 flex justify-center">
           <img className=" h-32 w-32 md:w-64 md:h-64"
             src={testimonials[currentTestimonial].image}
