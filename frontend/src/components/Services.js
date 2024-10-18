@@ -20,20 +20,7 @@ const Services = () => {
           buttonText="READ MORE"
           buttonLink={`/display?category=Pariharams`}
         />
-        <Card
-          title="Numerology"
-          description="Most of the numerology predictions are based on your number."
-          imgSrc={lemon}
-          buttonText="READ MORE"
-          buttonLink={`/display?category=Numerology`}
-        />
-        <Card
-          title="Tarot"
-          description="Tarot reading is a powerful form of divination that use an ancient check."
-          imgSrc={id}
-          buttonText="READ MORE"
-          buttonLink={`/display?category=Tarot`}
-        />
+        
         <Card
           title="Talk & Chat"
           description="Astrologer talk to you for solving your problems by online way."
@@ -62,13 +49,7 @@ const Services = () => {
           buttonText="READ MORE"
           buttonLink={`/display?category=Child Birth`}
         />
-        <Card
-          title="Numerology"
-          description="Most of the numerology predictions are based on your number."
-          imgSrc={lemon}
-          buttonText="READ MORE"
-          buttonLink={`/display?category=Numerology`}
-        />
+        
         <Card
           title="About Career"
           description="Get detailed numerology predictions to make informed career choices."
