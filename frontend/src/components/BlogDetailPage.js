@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import '../styles/BlogContainer.css';
-import Navbar from "./Navbar"
-import Footer from "../components/Footer"
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const BlogDetailPage = () => {
   const { id } = useParams();
@@ -42,58 +42,63 @@ const BlogDetailPage = () => {
     fetchBlogs();
   }, [selectedCategory]);
 
-  // Scroll to the top of the page when the blog ID changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
 
   if (!blog) return <div>Loading...</div>;
 
-  const blogDate = new Date(blog.createdAt); // or blog.publishedAt
+  const blogDate = new Date(blog.createdAt); 
   const monthYear = blogDate.toLocaleString('default', { month: 'long', year: 'numeric' });
 
   return (
-    <div className="">
+    <div className="bg-gray-50 min-h-screen">
       <Navbar />
-      <div className="max-w-7xl mx-auto rounded-lg overflow-hidden flex flex-col pt-16 md:px-10">
-        <div className="text-sm text-black px-4 pt-2">
-          {monthYear}, by Admin
+      <div className="max-w-5xl mx-auto rounded-lg overflow-hidden pt-16 md:px-10 shadow-lg bg-white">
+        <div className="text-gray-500 text-sm px-6 pt-2 italic">
+          {monthYear} • Admin
         </div>
         
-        <h2 className="font-bold text-3xl text-gray-800 px-4 pt-2">{blog.title}</h2>
+        <h2 className="font-bold text-4xl text-gray-800 px-6 pt-4 leading-tight">
+          {blog.title}
+        </h2>
         
         {blog.image && (
-          <div className="overflow-hidden">
-            <img src={blog.image} alt={blog.title} className="w-full p-2 h-48 md:h-full lg:h-full object-cover" />
+          <div className="overflow-hidden mt-4 px-6">
+            <img 
+              src={blog.image} 
+              alt={blog.title} 
+              className="w-full h-64 md:h-96 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105"
+            />
           </div>
         )}
         
-        <div className="text-sm w-fit my-5 mx-5 text-center text-gray-600 px-3 py-1 border-2 border-gray-600 rounded-2xl">
+        <div className="text-sm my-4 mx-6 inline-block text-gray-600 px-3 py-1 border border-gray-300 rounded-full">
           {blog.category}
         </div>  
         
-        <div className="p-6">
-          <div dangerouslySetInnerHTML={{ __html: blog.content }} className="text-gray-700" />
+        <div className="p-6 leading-relaxed text-gray-700 space-y-6">
+          <div dangerouslySetInnerHTML={{ __html: blog.content }} className="prose lg:prose-xl" />
         </div>
 
-        <div>
-          <div className='text-2xl md:text-3xl pl-5 font-semibold pt-20 md:pt-40'>
-            Suggested Blogs
-          </div>
-          <div className='pt-5'>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:gap-20 gap-4 px-4 md:px-0 lg:px-40">
-              {blogs.filter((suggestedBlog) => suggestedBlog._id !== blog._id).slice(0, 2).map((blog) => (
-                <Link to={`/blog/${blog._id}?category=${blog.category}`} key={blog._id}>
-                  <div className="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 cursor-pointer">
-                    <h2 className="text-xl font-bold mb-2">{blog.title}</h2>
-                    <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover mb-2" />
-                    <p>category: {blog.category}</p>
-                    <p className="text-gray-700 mb-2">{blog.content.slice(0, 100)}...</p>
-                    <p className="text-blue-500 hover:underline">Read more</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
+        <div className="bg-gray-100 p-8 mt-10">
+          <h3 className="text-2xl font-semibold text-gray-800 mb-6">Suggested Blogs</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {blogs.filter((suggestedBlog) => suggestedBlog._id !== blog._id).slice(0, 2).map((suggestedBlog) => (
+              <Link to={`/blog/${suggestedBlog._id}?category=${suggestedBlog.category}`} key={suggestedBlog._id}>
+                <div className="bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg cursor-pointer">
+                  <h4 className="text-xl font-semibold mb-2 text-gray-800">{suggestedBlog.title}</h4>
+                  <img 
+                    src={suggestedBlog.image} 
+                    alt={suggestedBlog.title} 
+                    className="w-full h-40 object-cover mb-4 rounded-lg"
+                  />
+                  <p className="text-gray-600 text-sm mb-2">Category: {suggestedBlog.category}</p>
+                  <p className="text-gray-600">{suggestedBlog.content.slice(0, 100)}...</p>
+                  <span className="text-blue-600 mt-2 inline-block">Read more &rarr;</span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
