@@ -1,7 +1,7 @@
 // src/LandingPage.js
 import React from 'react';
 
-import wheel from '../assets/wheel.png';
+import wheel from '../assets/newwheel.png';
 import '../styles/wheelAnimation.css'; // Import CSS file for wheel animation
 
 const LandingPage = () => {
